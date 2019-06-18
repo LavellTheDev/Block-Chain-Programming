@@ -1,0 +1,1 @@
+const Blockchain = require('./blockchain');
