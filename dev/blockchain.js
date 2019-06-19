@@ -1,6 +1,6 @@
 function Blockchain() {
   this.chain = [];
-  this.newTransactions = [];
+  this.pendingTransactions = [];
 }
 
 /*This method creates a new block. Inside of this block, we have
@@ -10,21 +10,30 @@ let's clear out the new transactions, push the new block into our
 chain, and simply return our new block*/
 Blockchain.prototype.createNewBlock = function (nonce, previousBlockHash, hash){
   const newBlock = {
-    index: this.chain.length + 1,
-    timestamp: Date.now(),
-    transactions: this.newTransactions,
-    nonce: nonce,
-    hash: hash,
-    previousBlockHash: previousBlockHash,
+      index: this.chain.length + 1,
+      timestamp: Date.now(),
+      transactions: this.pendingTransactions,
+      nonce: nonce,
+      hash: hash,
+      previousBlockHash: previousBlockHash,
   };
-  this.newTransaction = [];
+  this.pendingTransactions = [];
   this.chain.push(newBlock);
+
   return newBlock;
 };
 
-
 Blockchain.prototype.getLastBlock = function () {
-  return this.chain[this.chain.length -1];
+  return this.chain[this.chain.length - 1];
+};
+
+Blockchain.prototype.createNewTransaction = function (amount, sender, recipient) {
+  const newTransaction = {
+      amount: amount,
+      sender: sender,
+      recipient: recipient,
+  };
+  this.pendingTransactions.push(newTransaction);
 };
 
 
