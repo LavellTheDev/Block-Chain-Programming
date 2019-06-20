@@ -1,18 +1,22 @@
 //calls the blockchain.js file V
 const Blockchain = require('./blockchain');
-
 const bitcoin = new Blockchain ();
 
-bitcoin.createNewBlock(789457, 'OIUEDJETH8754DHKD', "78SHNEG45DER56");
+ const previousBlockHash = '87765DA6CCF0668238C1D27C35692E11';
 
-bitcoin.createNewTransaction(100, 'LillT8455J5TKCJ2', 'Perc5BG5DF6HT8NG9');
+ const currentBlockData = [
+{
+    amount: 10,
+    sender: 'B4CEE9C0E5CD571',
+    recipient: '3A3F6E462D48E9',
+},
+{
+    amount: 10,
+    sender: 'B4CEE9C0E5CD571',
+    recipient: '3A3F6E462D48E9',
+}
+];
 
-bitcoin.createNewBlock(789457, 'AMCKDJETH8754DHKD', "78LOH D45DER56");
+const nonce = 100;
 
-bitcoin.createNewTransaction(50,'LillHT845SJ5TKCJ2','Perc5BG5DF6HT8NG9');
-bitcoin.createNewTransaction(200,'ALEXHT845SJ5TKCJ2','Perc5BG5DF6HT8NG9');
-bitcoin.createNewTransaction(300,'ALEXHT845SJ5TKCJ2','Perc5BG5DF6HT8NG9');
-
-bitcoin.createNewBlock(789457, 'AMCKDJETH8754DHKD', "78LOH D45DER56");
-
-console.log(bitcoin.chain[2]);
+console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce));

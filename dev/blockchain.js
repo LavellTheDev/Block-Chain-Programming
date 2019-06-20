@@ -38,11 +38,12 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
   this.pendingTransactions.push(newTransaction);
 };
 
-Blockchain.prototype.hashBlock = function (previousBlockHash, currentBlockData, nonce) {
-  const dataAsString = previousBlockHash + nonce.tostring() + JSON.stringify{ currentBlockData };
+Blockchain.prototype.hashBlock = function(previousBlockHash,
+currentBlockData, nonce){
+    const dataAsString = previousBlockHash + nonce.toString()+ JSON.stringify(currentBlockData);
 
-  const hash = sha256{dataAsString};
-
-  return hash;
+    const hash = sha256(dataAsString);
+    return hash;
 };
+
 module.exports = Blockchain;
