@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LavellTheDev/Block-Chain-Programming/issues"
   },
-  "homepage": "https://github.com/LavellTheDev/Block-Chain-Programming#readme"
+  "homepage": "https://github.com/LavellTheDev/Block-Chain-Programming#readme",
+  "dependencies": {
+    "sha256": "^0.2.0"
+  }
 }
