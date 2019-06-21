@@ -11,7 +11,12 @@ const bitcoin = new Blockchain ();
     recipient: '3A3F6E462D48E9',
 },
 {
-    amount: 10,
+    amount: 30,
+    sender: 'B4CEE9C0E5CD571',
+    recipient: '3A3F6E462D48E9',
+},
+{
+    amount: 100,
     sender: 'B4CEE9C0E5CD571',
     recipient: '3A3F6E462D48E9',
 }
