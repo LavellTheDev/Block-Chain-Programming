@@ -37,6 +37,8 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
       recipient: recipient,
   };
   this.pendingTransactions.push(newTransaction);
+
+  return this.getLastBlock()['index'] + 1;
 };
 
 Blockchain.prototype.hashBlock = function(previousBlockHash,
