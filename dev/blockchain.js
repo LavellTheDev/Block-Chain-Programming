@@ -39,7 +39,7 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
       transactionId: uuid().split('-').join('')
   };
   this.pendingTransactions.push(newTransaction);
-
+//something is off with this line V
   return this.getLastBlock()['index'] + 1;
 
 };
